@@ -1,0 +1,5 @@
+# The website is served by GitHub Pages, which cannot serve Git LFS files.
+# Keep its images as ordinary git blobs (overrides the repo-wide LFS rules).
+*.png  !filter !diff !merge binary
+*.jpg  !filter !diff !merge binary
+*.jpeg !filter !diff !merge binary
