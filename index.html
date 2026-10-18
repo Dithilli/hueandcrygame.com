@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hue &amp; Cry™ · A stealth heist game. England, 1347.</title>
+<meta name="description" content="Hue &amp; Cry is a stealth heist game set in England in 1347. Run a company of six thieves for hire, one manor at a time, and be gone before the village raises the hue.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hue &amp; Cry™">
+<meta property="og:description" content="A stealth heist game. England, 1347.">
+<meta property="og:image" content="https://hueandcrygame.com/assets/archers.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&amp;family=Grenze+Gotisch:wght@500&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
+<style>
+  /* The Court Roll: a parchment membrane on a dark table. */
+  :root{--ink:#2b2219;--red:#9c3a22;--parch:#ece0c2;--slip:#f5ecd4;--muted:#6d5e47;--table:#3a3a33;--pale:#bdb59f;--hand:'IM Fell English',Georgia,serif;--book:'EB Garamond',Georgia,serif}
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  body{margin:0;background:var(--table);color:var(--ink);font-family:var(--hand);-webkit-font-smoothing:antialiased}
+  a{color:var(--red)}a:hover{color:var(--ink)}
+  :focus-visible{outline:2px solid var(--red);outline-offset:3px}
+  .page{min-height:100vh;padding-block:clamp(16px,5vw,64px);padding-left:max(10px,env(safe-area-inset-left,0px));padding-right:max(10px,env(safe-area-inset-right,0px));background:radial-gradient(ellipse at 50% 0%,#4a4a41,#2e2e29 70%)}
+  .wrap{max-width:760px;margin:0 auto}
+  .docket{margin:0 0 14px;text-align:center;font-family:var(--book);font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--pale)}
+  .roll{background:var(--parch);background-image:linear-gradient(90deg,rgba(120,90,40,.16),transparent 6%,transparent 94%,rgba(120,90,40,.16)),radial-gradient(ellipse at 30% 20%,rgba(255,250,232,.55),transparent 60%);box-shadow:0 30px 60px -30px rgba(0,0,0,.7),0 2px 4px rgba(0,0,0,.3)}
+  .head{padding:clamp(28px,6vw,56px) clamp(22px,6vw,64px) 24px;text-align:center;border-bottom:1px solid rgba(43,34,25,.18)}
+  .placita{margin:0;font-family:'Grenze Gotisch',Georgia,serif;font-size:clamp(24px,4vw,32px);color:var(--red);line-height:1}
+  .placita-en{margin:6px 0 26px;font-style:italic;font-size:16px;color:var(--muted)}
+  h1{margin:0;font-family:var(--book);font-weight:500;font-size:clamp(52px,11vw,104px);line-height:.88;letter-spacing:.04em}
+  sup.tm{font-size:.3em;vertical-align:top;margin-left:3px;line-height:1}
+  .strap{margin:14px 0 0;font-size:clamp(19px,2.6vw,24px);font-style:italic}
+  .entries{padding:clamp(24px,5vw,44px) clamp(16px,5vw,56px) 8px;display:flex;flex-direction:column;gap:30px}
+  .entry{display:flex;gap:clamp(12px,3vw,26px);align-items:flex-start}
+  .margin{flex:0 0 clamp(64px,13vw,104px);text-align:right;font-style:italic;font-size:clamp(14px,1.8vw,16px);line-height:1.25;color:var(--red);padding-top:4px;display:flex;flex-direction:column;gap:6px}
+  .margin .v{color:var(--ink)}
+  .body{flex:1 1 auto;min-width:0}
+  .latin{margin:0 0 6px;font-size:clamp(16px,1.9vw,18px);line-height:1.45;color:#5d4f3a;font-style:italic}
+  .text{margin:0;font-size:clamp(18px,2.2vw,21px);line-height:1.5;text-wrap:pretty}
+  .stitch{height:22px;margin:26px 0 0;background-image:repeating-linear-gradient(90deg,#6b5636 0 9px,transparent 9px 18px);background-size:100% 2px;background-repeat:no-repeat;background-position:0 50%;opacity:.55;border-top:1px solid rgba(43,34,25,.12);border-bottom:1px solid rgba(43,34,25,.12)}
+  .note{padding:clamp(28px,5vw,44px) clamp(22px,6vw,64px);display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,44px);align-items:flex-start}
+  .note-text{flex:1 1 320px;min-width:0;font-family:var(--book);font-size:clamp(17px,2vw,19px);line-height:1.6;text-wrap:pretty}
+  .note-text p{margin:0 0 14px}.note-text p:last-child{margin:0}
+  .label{font-family:var(--book);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+  .beast{flex:0 1 200px;margin:0;min-width:0}
+  .beast img{display:block;width:100%;height:auto;mix-blend-mode:multiply;transform:rotate(-3deg)}
+  figcaption.small{margin-top:8px;font-family:var(--book);font-size:13px;font-style:italic;color:var(--muted)}
+  .slipwrap{padding:0 clamp(16px,5vw,48px) clamp(28px,5vw,44px)}
+  .slip{margin:0 auto;max-width:560px;background:var(--slip);padding:22px 26px 18px;box-shadow:0 8px 18px -10px rgba(60,40,10,.5);transform:rotate(.6deg);border-top:3px dotted rgba(107,86,54,.45)}
+  .slip .label{margin:0 0 8px;font-size:12px;color:var(--muted)}
+  .slip blockquote{margin:0;font-size:clamp(20px,2.6vw,24px);line-height:1.35;font-style:italic;text-wrap:pretty}
+  .slip figcaption{margin-top:10px;font-size:16px;color:var(--red)}
+  .signup{padding:26px clamp(22px,6vw,64px) clamp(32px,6vw,52px);border-top:1px solid rgba(43,34,25,.18)}
+  form{display:flex;flex-direction:column;gap:12px}
+  .row{display:flex;flex-wrap:wrap;gap:12px}
+  input[type=email]{flex:1 1 230px;min-width:0;font:inherit;font-size:20px;padding:10px 2px;background:transparent;border:0;border-bottom:1.5px solid var(--ink);color:var(--ink);border-radius:0}
+  input[type=email]::placeholder{color:#8f7f63;font-style:italic}
+  button{flex:0 0 auto;font-family:var(--book);font-size:18px;font-weight:500;padding:12px 22px;min-height:48px;background:var(--ink);color:var(--parch);border:0;cursor:pointer}
+  button:hover{background:var(--red)}
+  button:disabled{opacity:.6;cursor:wait}
+  .fine{margin:0;font-family:var(--book);font-size:15px;font-style:italic;color:var(--muted)}
+  .status{margin:0;font-family:var(--book);font-size:16px;color:var(--red)}
+  footer{margin:20px 0 40px;display:flex;flex-direction:column;gap:8px;font-family:var(--book);font-size:14px;line-height:1.5;color:var(--pale)}
+  footer .line{display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between}
+  footer a{color:var(--pale)}footer a:hover{color:var(--parch)}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="wrap">
+
+    <p class="docket">Leicestershire · membrane 7</p>
+
+    <article class="roll">
+      <header class="head">
+        <p class="placita">Placita Corone</p>
+        <p class="placita-en">Pleas of the Crown, at Leicester</p>
+        <h1>HUE &amp; CRY<sup class="tm">™</sup></h1>
+        <p class="strap">A stealth heist game. England, 1347.</p>
+      </header>
+
+      <div class="entries">
+        <div class="entry">
+          <div class="margin"><span>Donyngton</span></div>
+          <div class="body">
+            <p class="latin" lang="la">Iuratores presentant quod in nocte proxima ante festum Sancti Michaelis…</p>
+            <p class="text">The jurors present that on the night before Michaelmas, six felons, one armed as a knight, one with a bow, one tonsured like a clerk, a woman who sold ale, a pardoner with his letters and one who dug, broke the granary of the manor of Donington and carried off they know not what. Whither they went, the jurors know not.</p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="margin"><span>Villata</span><span class="v" lang="la">mia.</span></div>
+          <div class="body">
+            <p class="latin" lang="la">Et villata non levavit hutesium nec secuta est. Ideo in misericordia.</p>
+            <p class="text">The hayward says he blew his horn. The township says it followed the hue as far as the Leicester road. The jurors say otherwise. Therefore the township is in mercy.</p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="margin"><span>Felones</span><span class="v" lang="la">catalla nulla</span></div>
+          <div class="body">
+            <p class="latin" lang="la">Catalla nulla. Postea habuerunt cartam de perdonacione.</p>
+            <p class="text">They had no chattels. Afterwards they had a charter of pardon.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stitch" aria-hidden="true"></div>
+
+      <div class="note">
+        <div class="note-text">
+          <p class="label">Note on the record</p>
+          <p>You run that company: a knight, an archer, a clerk, an alewife, a pardoner and a sapper, after the Folvilles, Leicestershire gentry who robbed, ransomed and murdered in the 1320s and 30s and were mostly pardoned for it.</p>
+          <p>Each job is one manor, the first the real house at Donington-le-Heath. By the Statute of Winchester (1285), whoever hears the hue must follow it. The village is the alarm. Leave before it sounds, and before the township is fined for letting you go.</p>
+        </div>
+        <figure class="beast">
+          <img src="assets/grotesque.png" alt="A marginal grotesque from the Luttrell Psalter" width="371" height="358" loading="lazy">
+          <figcaption class="small">Drawn in the margin, Luttrell Psalter f. 27r.</figcaption>
+        </figure>
+      </div>
+
+      <div class="slipwrap">
+        <figure class="slip">
+          <p class="label">A slip sewn to the roll, in a later hand</p>
+          <blockquote>“Of the company that robbed the granary at Donington in the year before the great dying, I have three accounts. They agree on nothing but the horn.”</blockquote>
+          <figcaption>— Alinea, nun of Sempringham, c. 1392</figcaption>
+        </figure>
+      </div>
+
+      <div class="signup">
+        <form id="signup" data-signup>
+          <label for="email" class="label">Be entered on the roll</label>
+          <div class="row">
+            <input id="email" name="email" type="email" required placeholder="your address" autocomplete="email">
+            <button type="submit">Raise the hue</button>
+          </div>
+          <p class="fine">One letter when there is news. Nothing else.</p>
+          <p class="status" data-status role="status" hidden></p>
+        </form>
+        <div id="signed" class="entry" hidden>
+          <div class="margin"><span>Item</span></div>
+          <p class="text">And <span data-who>one</span> heard the cry, and will follow it. <span class="fine">One letter when there is news. Nothing else.</span></p>
+        </div>
+      </div>
+    </article>
+
+    <footer>
+      <div class="line">
+        <span>HUE &amp; CRY™ is a trademark of David Szarzynski.</span>
+        <span>Image: Luttrell Psalter, British Library Add MS 42130. Public domain.</span>
+      </div>
+      <div class="line">
+        <span>The entries above are invented, in the manner of the plea rolls.</span>
+        <span>The same news in other hands: <a href="psalter/">the psalter page</a> · <a href="night-watch/">the night watch</a></span>
+      </div>
+    </footer>
+  </div>
+</div>
+<script src="assets/signup.js"></script>
+<script>
+  document.addEventListener("signed", function (e) {
+    document.getElementById("signup").hidden = true;
+    var done = document.getElementById("signed");
+    done.querySelector("[data-who]").textContent = (e.detail && e.detail.email) || "one";
+    done.hidden = false;
+  });
+</script>
+</body>
+</html>

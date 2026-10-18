@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hue &amp; Cry™ · A stealth heist game. England, 1347.</title>
+<meta name="description" content="Hue &amp; Cry is a stealth heist game set in England in 1347. Run a company of six thieves for hire, one manor at a time, and be gone before the village raises the hue.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hue &amp; Cry™">
+<meta property="og:description" content="A stealth heist game. England, 1347.">
+<meta property="og:image" content="https://hueandcrygame.com/assets/archers.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=Spectral:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
+<style>
+  /* The Night Watch: the village in the dark, and the alarm in three stages. */
+  :root{--night:#0b0f1a;--parch:#f1e7cf;--text:#e6dcc6;--body:#c9c2b0;--dim:#8b90a3;--faint:#6f7486;--amber:#e8a64a;--lamp:#f0a84a;--display:'Cormorant Garamond',Georgia,serif;--book:Spectral,Georgia,serif}
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  body{margin:0;background:var(--night);color:var(--text);font-family:var(--book);-webkit-font-smoothing:antialiased}
+  a{color:var(--amber)}a:hover{color:#f5d39a}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+  .night{min-height:100vh;background:var(--night);transition:background 1.2s ease;overflow:hidden}
+  .gutter{padding-left:max(20px,env(safe-area-inset-left,0px),5vw);padding-right:max(20px,env(safe-area-inset-right,0px),5vw)}
+  .hero{position:relative;min-height:min(100vh,860px);display:flex;flex-direction:column;justify-content:space-between;padding-top:clamp(20px,4vw,40px)}
+  .top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+  .top .name{color:var(--text)}
+  .stage{max-width:980px;width:100%;margin:clamp(40px,8vh,90px) auto 0;text-align:center;position:relative;z-index:2}
+  .stages{display:flex;justify-content:center;gap:clamp(6px,2vw,28px);flex-wrap:wrap;margin-bottom:clamp(28px,5vh,48px)}
+  .stages button{font:inherit;font-size:13px;letter-spacing:.2em;text-transform:uppercase;background:none;border:0;border-bottom:1px solid transparent;color:#5f6579;padding:10px 4px;min-height:44px;cursor:pointer;transition:color .6s,border-color .6s}
+  .stages button[aria-pressed=true]{color:var(--parch);border-bottom-color:var(--parch)}
+  .stages button.alarm[aria-pressed=true]{color:#f3a944;border-bottom-color:#f3a944}
+  .head{margin:0;font-family:var(--display);font-weight:500;font-style:italic;font-size:clamp(52px,11vw,132px);line-height:.92;color:#c9cfe0;transition:color .8s;text-wrap:balance}
+  .line{margin:22px auto 0;max-width:30em;font-size:clamp(17px,2vw,20px);line-height:1.5;color:#a9adbc;min-height:3em;text-wrap:pretty}
+  .village{position:relative;margin-top:clamp(30px,6vh,60px);margin-left:calc(-1 * max(20px,5vw));margin-right:calc(-1 * max(20px,5vw))}
+  .windows{display:flex;justify-content:center;gap:clamp(10px,3vw,34px);padding:0 20px 18px;position:relative;z-index:2}
+  .windows span{width:clamp(8px,1.4vw,14px);height:clamp(11px,1.9vw,19px);background:#1a2132;transition:background .5s,box-shadow .5s}
+  .windows span.on{background:var(--lamp);box-shadow:0 0 18px 4px rgba(240,168,74,.55)}
+  .fold{display:block;width:100%;max-height:340px;object-fit:cover;object-position:50% 60%;transition:filter 1.2s ease;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 35%,#000 75%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 35%,#000 75%,transparent)}
+  .about{max-width:1080px;margin:0 auto;padding-top:clamp(40px,7vw,90px);padding-bottom:40px;display:flex;flex-wrap:wrap;gap:clamp(36px,6vw,80px)}
+  .about .col{flex:1 1 400px;min-width:0}
+  .about .col2{flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:40px}
+  h1{margin:0;font-family:var(--display);font-weight:600;font-size:clamp(54px,9vw,96px);line-height:.9;letter-spacing:.03em;color:var(--parch)}
+  sup.tm{font-size:.3em;vertical-align:top;margin-left:3px;line-height:1}
+  .strap{margin:14px 0 30px;font-size:clamp(18px,2.2vw,22px);color:var(--amber);font-style:italic}
+  .copy{margin:0 0 18px;font-size:clamp(17px,1.9vw,19px);line-height:1.6;color:var(--body);text-wrap:pretty}
+  .copy:last-child{margin:0}
+  figure{margin:0}
+  blockquote{margin:0;font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(25px,3vw,32px);line-height:1.22;color:var(--parch);text-wrap:pretty}
+  figcaption{margin-top:14px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+  form{display:flex;flex-direction:column;gap:12px}
+  label{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+  .row{display:flex;flex-wrap:wrap;gap:10px}
+  input[type=email]{flex:1 1 220px;min-width:0;font:inherit;font-size:18px;padding:13px 14px;background:#131a2b;border:1px solid #2b3550;color:var(--parch);border-radius:2px}
+  input[type=email]:focus{border-color:var(--amber)}
+  input[type=email]::placeholder{color:var(--faint)}
+  button.go{flex:0 0 auto;font:inherit;font-size:17px;font-weight:500;padding:13px 22px;min-height:50px;background:var(--amber);color:#120d06;border:0;border-radius:2px;cursor:pointer;box-shadow:0 0 28px -6px rgba(232,166,74,.7)}
+  button.go:hover{background:#f2b862}
+  button.go:disabled{opacity:.6;cursor:wait}
+  .fine{margin:0;font-size:15px;font-style:italic;color:var(--dim)}
+  .status{margin:0;font-size:16px;color:var(--amber)}
+  .done{margin:0;font-size:20px;line-height:1.5;color:var(--parch)}
+  .done span{color:var(--amber)}
+  footer{max-width:1080px;margin:0 auto;padding-top:24px;padding-bottom:40px;display:flex;flex-direction:column;gap:6px;font-size:13px;line-height:1.5;color:var(--faint);border-top:1px solid #1d2438}
+  footer .fline{display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between}
+  @media (prefers-reduced-motion: reduce){.night,.head,.windows span,.fold,.stages button{transition:none}}
+</style>
+</head>
+<body>
+<div class="night" id="night">
+
+  <section class="hero gutter">
+    <header class="top">
+      <span class="name">Hue &amp; Cry™</span>
+      <span>Donington-le-Heath · Michaelmas 1347</span>
+    </header>
+
+    <div class="stage">
+      <div class="stages" role="group" aria-label="How the alarm rises">
+        <button type="button" data-stage="0" aria-pressed="true">I · All quiet</button>
+        <button type="button" data-stage="1" aria-pressed="false">II · A stranger seen</button>
+        <button type="button" data-stage="2" aria-pressed="false" class="alarm">III · The hue is raised</button>
+      </div>
+      <p class="head" id="head" aria-live="polite">All quiet.</p>
+      <p class="line" id="line">The fires are covered at Donington. The hayward sleeps beside his horn.</p>
+    </div>
+
+    <div class="village">
+      <div class="windows" id="windows" aria-hidden="true">
+        <span data-rank="4"></span><span data-rank="1"></span><span data-rank="7"></span><span data-rank="0"></span><span data-rank="5"></span><span data-rank="8"></span><span data-rank="2"></span><span data-rank="6"></span><span data-rank="3"></span>
+      </div>
+      <img class="fold" id="fold" src="../assets/sheepfold.jpg" alt="The sheepfold, Luttrell Psalter f. 163v" width="1239" height="664" style="filter:grayscale(1) brightness(.32) contrast(1.15) sepia(.4) hue-rotate(180deg)">
+    </div>
+  </section>
+
+  <section class="about gutter">
+    <div class="col">
+      <h1>HUE &amp; CRY<sup class="tm">™</sup></h1>
+      <p class="strap">A stealth heist game. England, 1347.</p>
+      <p class="copy">You run six thieves for hire: a knight, an archer, a clerk, an alewife, a pardoner and a sapper, modelled on the Folvilles, Leicestershire gentry who robbed and murdered their way through the 1320s and 30s and were mostly pardoned for it.</p>
+      <p class="copy">Each job is one manor, starting with the real thirteenth-century hall at Donington-le-Heath. By the Statute of Winchester (1285), every man who hears the cry must drop his work and chase the thief. So the village is the alarm. Be gone before it sounds.</p>
+    </div>
+    <div class="col2">
+      <figure>
+        <blockquote>“Of the company that robbed the granary at Donington in the year before the great dying, I have three accounts. They agree on nothing but the horn.”</blockquote>
+        <figcaption>Alinea, nun of Sempringham, c. 1392</figcaption>
+      </figure>
+      <form id="signup" data-signup>
+        <label for="email">Send word</label>
+        <div class="row">
+          <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email">
+          <button type="submit" class="go">Raise the hue</button>
+        </div>
+        <p class="fine">One letter when there is news. Nothing else.</p>
+        <p class="status" data-status role="status" hidden></p>
+      </form>
+      <p id="signed" class="done" hidden><span>The hue is raised.</span> One letter when there is news. Nothing else.</p>
+    </div>
+  </section>
+
+  <footer class="gutter">
+    <div class="fline">
+      <span>HUE &amp; CRY™ is a trademark of David Szarzynski.</span>
+      <span>The sheepfold, f. 163v. Luttrell Psalter, British Library Add MS 42130. Public domain.</span>
+    </div>
+    <div class="fline">
+      <span>The same news in other hands: <a href="../">the court roll</a> · <a href="../psalter/">the psalter page</a></span>
+    </div>
+  </footer>
+</div>
+<script src="../assets/signup.js"></script>
+<script>
+(function () {
+  var STAGES = [
+    { head: "All quiet.", line: "The fires are covered at Donington. The hayward sleeps beside his horn.", lit: 0, bg: "#0b0f1a", color: "#c9cfe0", filter: "grayscale(1) brightness(.32) contrast(1.15) sepia(.4) hue-rotate(180deg)" },
+    { head: "A stranger seen.", line: "A dog will not stop barking. A shutter opens on the far side of the green.", lit: 3, bg: "#0e1220", color: "#e9cf9e", filter: "grayscale(1) brightness(.42) contrast(1.15) sepia(.5) hue-rotate(170deg)" },
+    { head: "The hue is raised.", line: "Horns, shouts, every man out of his bed and after you. Run.", lit: 99, bg: "#1e130b", color: "#f3a944", filter: "sepia(.9) saturate(1.6) brightness(.62) contrast(1.1)" }
+  ];
+  var night = document.getElementById("night"), head = document.getElementById("head"), line = document.getElementById("line"), fold = document.getElementById("fold");
+  var buttons = document.querySelectorAll(".stages button"), windows = document.querySelectorAll("#windows span");
+  var current = 0, paused = false;
+
+  function show(i) {
+    current = i;
+    var s = STAGES[i];
+    night.style.background = s.bg;
+    head.textContent = s.head;
+    head.style.color = s.color;
+    line.textContent = s.line;
+    fold.style.filter = s.filter;
+    buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(Number(b.dataset.stage) === i)); });
+    windows.forEach(function (w) {
+      var rank = Number(w.dataset.rank);
+      w.style.transitionDelay = (rank * 0.12) + "s";
+      w.classList.toggle("on", rank < s.lit);
+    });
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () { paused = true; show(Number(b.dataset.stage)); });
+  });
+
+  var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!still) setInterval(function () { if (!paused) show((current + 1) % STAGES.length); }, 3600);
+
+  document.addEventListener("signed", function () {
+    document.getElementById("signup").hidden = true;
+    document.getElementById("signed").hidden = false;
+    paused = true; show(2);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hue &amp; Cry™ · A stealth heist game. England, 1347.</title>
+<meta name="description" content="Hue &amp; Cry is a stealth heist game set in England in 1347. Run a company of six thieves for hire, one manor at a time, and be gone before the village raises the hue.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hue &amp; Cry™">
+<meta property="og:description" content="A stealth heist game. England, 1347.">
+<meta property="og:image" content="https://hueandcrygame.com/assets/archers.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap" rel="stylesheet">
+<style>
+  /* The Psalter Page: one manuscript leaf, a painted initial, ruled text, beasts in the margin. */
+  :root{--ink:#2a2018;--red:#a8381f;--blue:#2f4f8f;--gold:#b8913a;--leaf:#f1e7cf;--muted:#6a5a44;--book:'EB Garamond',Georgia,serif}
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  body{margin:0;background:#d9cba9;color:var(--ink);font-family:var(--book);-webkit-font-smoothing:antialiased}
+  a{color:var(--red)}a:hover{color:var(--blue)}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+  .desk{min-height:100vh;padding-block:clamp(12px,4vw,48px);padding-left:max(8px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px));background:radial-gradient(ellipse at 50% 30%,#e4d7b6 0%,#cdbd98 100%)}
+  main{max-width:1080px;margin:0 auto;background:var(--leaf);background-image:radial-gradient(ellipse at 20% 0%,rgba(255,250,235,.7),transparent 60%),radial-gradient(ellipse at 100% 100%,rgba(170,140,90,.22),transparent 55%);box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 24px 60px -30px rgba(60,40,10,.55),0 2px 6px rgba(60,40,10,.18);padding:clamp(24px,6vw,72px) clamp(20px,6vw,80px) clamp(28px,5vw,56px)}
+  .rubric{margin:0 0 28px;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);font-weight:500}
+  .cols{display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px);align-items:flex-start}
+  .text-col{flex:1 1 440px;min-width:0}
+  .title{display:flex;align-items:flex-end;gap:clamp(12px,2vw,20px);margin-bottom:10px}
+  .initial{flex:0 0 auto;width:clamp(92px,16vw,138px);aspect-ratio:1;background:var(--gold);padding:6px;box-shadow:0 0 0 1.5px var(--ink)}
+  .initial span{width:100%;height:100%;background-color:var(--blue);background-image:radial-gradient(circle,var(--leaf) 1px,transparent 1.6px);background-size:11px 11px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 1.5px var(--ink) inset;font-size:clamp(72px,13vw,112px);line-height:1;font-weight:700;color:#e9b8b0;text-shadow:2px 2px 0 var(--red),-1px -1px 0 var(--ink)}
+  h1{margin:0;font-weight:500;font-size:clamp(46px,9vw,92px);line-height:.86;letter-spacing:.02em;padding-bottom:4px}
+  h1 .amp{color:var(--red)}
+  sup.tm{font-size:.32em;vertical-align:top;margin-left:2px;letter-spacing:0;line-height:1}
+  .strap{margin:0 0 30px;font-style:italic;font-size:clamp(21px,2.6vw,26px);color:var(--blue)}
+  .ruled{font-size:clamp(18px,2vw,20.5px);line-height:32px;background-image:repeating-linear-gradient(to bottom,transparent 0 31px,rgba(168,56,31,.16) 31px 32px);text-wrap:pretty}
+  .ruled p{margin:0 0 32px}
+  .pil{color:var(--red)}.pil.b{color:var(--blue)}
+  .alinea{margin:8px 0 36px;padding:22px 0 20px;border-top:1.5px solid var(--red);border-bottom:1.5px solid var(--red)}
+  .alinea blockquote{margin:0;font-size:clamp(22px,2.8vw,28px);line-height:1.3;font-style:italic;text-wrap:pretty}
+  .alinea figcaption{margin-top:12px;font-size:16px;letter-spacing:.08em;font-variant:small-caps;color:var(--red)}
+  form{display:flex;flex-direction:column;gap:12px}
+  label{font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);font-weight:500}
+  .row{display:flex;flex-wrap:wrap;gap:12px;align-items:stretch}
+  input[type=email]{flex:1 1 240px;min-width:0;font:inherit;font-size:20px;padding:10px 4px;background:transparent;border:0;border-bottom:1.5px solid var(--ink);color:var(--ink);border-radius:0}
+  input[type=email]::placeholder{color:#8a7a60;font-style:italic}
+  button{flex:0 0 auto;font:inherit;font-size:19px;font-weight:500;letter-spacing:.04em;padding:12px 24px;min-height:48px;background:var(--red);color:#f8efda;border:0;cursor:pointer;box-shadow:0 0 0 1.5px var(--ink),4px 4px 0 var(--gold)}
+  button:hover{background:#8e2c16}
+  button:active{transform:translate(2px,2px);box-shadow:0 0 0 1.5px var(--ink),2px 2px 0 var(--gold)}
+  button:disabled{opacity:.6;cursor:wait}
+  .fine{margin:0;font-size:16px;font-style:italic;color:var(--muted)}
+  .status{margin:0;font-size:17px;color:var(--red)}
+  .done{margin:0;font-size:22px;line-height:1.4}
+  aside{flex:1 1 220px;max-width:300px;min-width:0;display:flex;flex-direction:column;gap:28px;padding-top:6px}
+  figure.img{margin:0}
+  figure.img img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+  figure.img figcaption{margin-top:6px;font-size:14px;font-style:italic;color:var(--muted)}
+  .gloss{margin:0;font-size:16px;line-height:1.45;color:var(--red);text-wrap:pretty}
+  .gloss b{font-weight:400;font-variant:small-caps;letter-spacing:.06em}
+  figure.img.wide{margin:clamp(36px,6vw,64px) 0 0}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid rgba(42,32,24,.25);display:flex;flex-direction:column;gap:6px;font-size:14px;color:#5a4a36}
+  footer .line{display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between}
+</style>
+</head>
+<body>
+<div class="desk">
+  <main>
+    <p class="rubric">Of a company of thieves, and of the village that pursued them</p>
+
+    <div class="cols">
+      <div class="text-col">
+        <div class="title">
+          <div class="initial" aria-hidden="true"><span>H</span></div>
+          <h1 aria-label="Hue and Cry"><span aria-hidden="true">UE <span class="amp">&amp;</span> CRY<sup class="tm">™</sup></span></h1>
+        </div>
+        <p class="strap">A stealth heist game. England, 1347.</p>
+
+        <div class="ruled">
+          <p><span class="pil">¶</span> You run a company of six for hire: a knight, an archer, a clerk, an alewife, a pardoner and a sapper. They are modelled on the Folvilles, Leicestershire gentry who robbed, ransomed and murdered through the 1320s and 30s, and were mostly pardoned for it.</p>
+          <p><span class="pil b">¶</span> Each job is one manor. The first is a real one: the thirteenth-century manor house at Donington-le-Heath. Get in, take what you came for, and get out before anyone sounds the alarm, because the alarm is the village. Every ploughman, every dog, and the hayward with his horn.</p>
+        </div>
+
+        <figure class="alinea">
+          <blockquote>“Of the company that robbed the granary at Donington in the year before the great dying, I have three accounts. They agree on nothing but the horn.”</blockquote>
+          <figcaption>— Alinea, nun of Sempringham, c. 1392</figcaption>
+        </figure>
+
+        <form id="signup" data-signup>
+          <label for="email">Write your name in the margin</label>
+          <div class="row">
+            <input id="email" name="email" type="email" required placeholder="your address" autocomplete="email">
+            <button type="submit">Raise the hue</button>
+          </div>
+          <p class="fine">One letter when there is news. Nothing else.</p>
+          <p class="status" data-status role="status" hidden></p>
+        </form>
+        <p id="signed" class="done" hidden><span class="pil">¶</span> <em>Your name is written down.</em> One letter when there is news. Nothing else.</p>
+      </div>
+
+      <aside>
+        <figure class="img">
+          <img src="../assets/grotesque.png" alt="A marginal grotesque from the Luttrell Psalter" width="371" height="358" loading="lazy">
+          <figcaption>A beast in the margin, f. 27r.</figcaption>
+        </figure>
+        <p class="gloss"><b>Gloss.</b> By the Statute of Winchester, 1285, every man who heard the hue and cry was bound to leave his work and follow the thief.</p>
+      </aside>
+    </div>
+
+    <figure class="img wide">
+      <img src="../assets/archers.jpg" alt="Archers practising at the butts, Luttrell Psalter f. 147v" width="1123" height="763" loading="lazy">
+      <figcaption>Archery at the butts, f. 147v.</figcaption>
+    </figure>
+
+    <footer>
+      <div class="line">
+        <span>HUE &amp; CRY™ is a trademark of David Szarzynski.</span>
+        <span>Images: Luttrell Psalter, British Library Add MS 42130. Public domain.</span>
+      </div>
+      <div class="line">
+        <span>The same news in other hands: <a href="../">the court roll</a> · <a href="../night-watch/">the night watch</a></span>
+      </div>
+    </footer>
+  </main>
+</div>
+<script src="../assets/signup.js"></script>
+<script>
+  document.addEventListener("signed", function () {
+    document.getElementById("signup").hidden = true;
+    document.getElementById("signed").hidden = false;
+  });
+</script>
+</body>
+</html>
